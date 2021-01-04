@@ -1,4 +1,4 @@
-package conn;
+package test;
 
 
 import java.sql.Connection;
@@ -19,7 +19,8 @@ public class ConnTest {
 					"jdbc:oracle:thin:@localhost:1521/xe","jtest","ezen1234");//호스트 포트 서비스명 사용자이름 비밀번호 이상이 없으면 con한태 넘겨준다
 			con.setAutoCommit(false);//자동적으로 저장하지마라.
 			Statement stmt = con.createStatement();//쿼리문 쓰는 화면 
-			String sql = "insert into song_info(si_num,si_name,si_genre,si_singer,si_creadat)";
+			String sql = 
+					"insert into song_info(si_num,si_name,si_genre,si_singer,si_creadat)";
 			sql += "values(1,'애국가','KPOP','우리모두','19401201')";
 			int result = stmt.executeUpdate(sql);//업데이트해 명령때림.
 			System.out.println(result+"개 insert되있음");
